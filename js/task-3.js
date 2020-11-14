@@ -23,7 +23,7 @@ const images = [
     tegLi = document.createElement('li');
     let { url, alt } = element
     tegLi.insertAdjacentHTML('afterbegin', `<img class='img'src='${url} alt='${alt}'/>`)
-    console.log(tegLi)
+    //console.log(tegLi)
     parent.append(tegLi)
   }
 
