@@ -8,22 +8,16 @@ const ingredients = [
 ];
 /*---------------- ВАРИАНТ 1------------*/
 
-function create(array, i) {
-let element = document.createElement('li')
-element.textContent = array[i]
-    return element
-}
+let elementsLi = ingredients.map(elementArr => {
+  let li=document.createElement('li');
+  li.textContent = elementArr;
+  //console.log(li)
+  return li;
+})
 
-//console.log(create(ingredients, 0))
-//console.log(create(ingredients, 1))
-//console.log(create(ingredients, 2))
-//console.log(create(ingredients, 3))
-//console.log(create(ingredients, 4))
-//console.log(create(ingredients, 5))
+let ingrid = document.querySelector('#ingredients')
+ingrid.append(...elementsLi)
 
-let parent = document.querySelector('#ingredients')
-parent.append(create(ingredients, 0), create(ingredients, 1),
-    create(ingredients, 2), create(ingredients, 3), create(ingredients, 4), create(ingredients, 5))
 
 /*---------------- ВАРИАНТ 2------------*/
 

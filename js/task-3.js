@@ -15,20 +15,21 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+   
+let gallery = document.querySelector('#gallery')
+let tegLiArr = []
+let tegLi
+for (const element of images) {
+  tegLi = document.createElement('li');
+  let { url, alt } = element
+  tegLi.insertAdjacentHTML('afterbegin', `<img class='img'src='${url} alt='${alt}'/>`)
+  tegLiArr.push(tegLi)
+}
 
+gallery.append(...tegLiArr)
 
-    let parent = document.querySelector('#gallery')
-    let tegLi
-    for (const element of images) {
-    tegLi = document.createElement('li');
-    let { url, alt } = element
-    tegLi.insertAdjacentHTML('afterbegin', `<img class='img'src='${url} alt='${alt}'/>`)
-    //console.log(tegLi)
-    parent.append(tegLi)
-  }
-
-parent.style.display = 'flex'
-parent.style.width = '1600px'
+gallery.style.display = 'flex'
+gallery.style.width = '1600px'
 
 let li =document.querySelectorAll('#gallery li')
 li[0].style.marginRight = '20px'
@@ -40,7 +41,15 @@ for (const element of img) {
   element.style.display = 'block';
   element.style.width = '100%';
 }
-
+/*------------СТАРЫЙ ВАРИАНТ-----------*/
+/* let parent = document.querySelector('#gallery')
+    let tegLi
+    for (const element of images) {
+    tegLi = document.createElement('li');
+    let { url, alt } = element
+    tegLi.insertAdjacentHTML('afterbegin', `<img class='img'src='${url} alt='${alt}'/>`)
+    parent.append(tegLi)
+  }*/
 
 
 
